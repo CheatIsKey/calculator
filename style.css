@@ -1,0 +1,66 @@
+/* 기본 초기화 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  display: flex; justify-content: center; align-items: center;
+  min-height: 100vh; color: #2c3e50; background: #ecf0f1;
+  animation: fadein 1.5s;
+}
+@keyframes fadein { from {opacity: 0;} to {opacity: 1;} }
+
+.container { display: block; text-align: center; }
+
+h1 { margin-bottom: 0; font-size: 300%; color: #34495e; }
+
+/* 계산기 전체 박스 */
+.calculator {
+  display: inline-block;
+  width: min(520px, 92vw);
+}
+
+/* 입력창 */
+input {
+  direction: ltr; background-color: white; width: 100%;
+  font-size: 3rem; color: #2c3e50;
+  border: 2px solid #bdc3c7; border-radius: 0.5rem;
+}
+
+/* 버튼 테이블 */
+table {
+  margin: 0 auto; width: 100%; border-collapse: collapse;
+}
+
+/* 버튼 */
+button {
+  background-color: #ecf0f1;
+  width: 100%;
+  height: clamp(48px, 10vw, 96px);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  color: #2c3e50;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  border: 2px solid #bdc3c7;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: 3px 2px 22px 1px rgba(0,0,0,0.15);
+  transform: scale(0.95);
+}
+button:hover {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+}
+button:focus {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+#resetButton {
+  width: 100%; background-color: red; font-weight: bold; color: white;
+  border-color: #c0392b;
+}
+#result {
+  background-color: skyblue; font-weight: bold; color: black;
+  border-color: #5fa8c6;
+}
